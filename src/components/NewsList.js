@@ -18,7 +18,7 @@ class NewsList extends React.Component {
                 <img src={N.urlToImage} />
               </div>
               <div className="content">
-                <a href={N.url} target="_blank" className="header">
+                <a rel="noopener noreferrer" href={N.url} target="_blank" className="header">
                   {N.title}
                 </a>
                 <div className="description">

@@ -1,5 +1,6 @@
 {
   "name": "covid19",
+  "homepage": "http://COVID-19.shubhamsweb.in",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

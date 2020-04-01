@@ -40,6 +40,22 @@ class StateList extends React.Component {
     }
   };
 
+  renderDistrict = State => {
+    if (this.props.DistrictWise[State]) {
+      return Object.entries(this.props.DistrictWise[State].districtData).map(
+        District => {
+          return (
+            <React.Fragment>
+              <tr>
+                <td className="color-gray"><strong>{District[0]}</strong></td>
+                <td className="color-gray"><strong>{District[1].confirmed}</strong></td>
+              </tr>
+            </React.Fragment>
+          );
+        }
+      );
+    }
+  };
   renderState = () => {
     if (this.props.States.statewise) {
       return this.props.States.statewise.map(State => {
@@ -56,43 +72,21 @@ class StateList extends React.Component {
                       </a>
                     </div>
                     <div className="content">
-                      <table className="ui selectable tiny celled unstackable table">
+                      <table className="ui selectable very compact celled unstackable table">
                         <thead>
                           <tr>
                             <th>DISTRICT</th>
-                            <th>CONFIRMED</th>
+                            <th>CNF</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td>Bhailai</td>
-                            <td>1</td>
-                          </tr>
-                          <tr>
-                            <td>Bhailai</td>
-                            <td>1</td>
-                          </tr>
-                          <tr>
-                            <td>Korba</td>
-                            <td>2</td>
-                          </tr>
-                          <tr>
-                            <td>Raigarh</td>
-                            <td>1</td>
-                          </tr>
-                        </tbody>
+                        <tbody>{this.renderDistrict(State.state)}</tbody>
                       </table>
                     </div>
                   </div>
-                  {/* <div className="ui segment">
-                    <a style={{ color: "gray" }}>
-                      <strong>{State.state}</strong>
-                    </a>
-                  </div> */}
                 </td>
                 <td>
                   <div className="ui compact menu">
-                    <a style={{ color: "grey" }} className="item">
+                    <a className="item color-gray">
                       <strong>{State.confirmed}</strong>
                       {this.renderComfirmed(State)}
                     </a>
@@ -100,7 +94,7 @@ class StateList extends React.Component {
                 </td>
                 <td>
                   <div className="ui compact menu">
-                    <a style={{ color: "grey" }} className="item">
+                    <a className="item color-gray">
                       <strong>{State.active}</strong>
                       {this.renderActive(State)}
                     </a>
@@ -108,7 +102,7 @@ class StateList extends React.Component {
                 </td>
                 <td>
                   <div className="ui compact menu">
-                    <a style={{ color: "grey" }} className="item">
+                    <a className="item color-gray">
                       <strong>{State.recovered}</strong>
                       {this.renderRecovered(State)}
                     </a>
@@ -116,7 +110,7 @@ class StateList extends React.Component {
                 </td>
                 <td>
                   <div className="ui compact menu">
-                    <a style={{ color: "grey" }} className="item">
+                    <a className="item color-gray">
                       <strong>{State.deaths}</strong>
                       {this.renderDeaths(State)}
                     </a>
@@ -132,7 +126,7 @@ class StateList extends React.Component {
   renderTotal() {
     if (this.props.States.statewise) {
       return this.props.States.statewise.map(T => {
-        if (T.state == "Total") {
+        if (T.state === "Total") {
           return (
             <div className="ui four statistics">
               <div className="ui red segment statistic">
@@ -164,8 +158,6 @@ class StateList extends React.Component {
     }
   }
   render() {
-    console.log(this.props.DistrictWise);
-
     if (!this.props.States || !this.props.DistrictWise) {
       return (
         <div className="text-center">
@@ -181,11 +173,21 @@ class StateList extends React.Component {
         <table className="ui selectable celled blue unstackable table">
           <thead>
             <tr>
-              <th>STATE</th>
-              <th>CONFIRMED</th>
-              <th>ACTIVE</th>
-              <th>RECOVERED</th>
-              <th>DECEASED</th>
+              <th>
+                <h4>STATES</h4>
+              </th>
+              <th>
+                <h4 className="color-red">CNFMD</h4>
+              </th>
+              <th>
+                <h4 className="color-blue">ACTIVE</h4>
+              </th>
+              <th>
+                <h4 className="color-green">RCVRD</h4>
+              </th>
+              <th>
+                <h4 className="color-gray">DECEASED</h4>
+              </th>
             </tr>
           </thead>
           <tbody>{this.renderState()}</tbody>
@@ -197,7 +199,7 @@ class StateList extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    DistrictWise: Object.keys(state.DistrictData),
+    DistrictWise: state.DistrictData,
     States: state.StateData
   };
 };

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./header";
 import StateList from "./StateList";
 import NewsList from "./NewsList";
+import Footer from "./footer";
 const App = () => {
   return (
     <React.Fragment>
@@ -12,7 +13,6 @@ const App = () => {
             <StateList />
           </div>
           <div className="column">
-            {/* <h1 className="ui huge grey header">News Bulletin</h1><br /><br /> */}
             <div className="ui one huge statistics">
               <div className="statistic">
                 <div className="value">NEWS</div>
@@ -23,6 +23,7 @@ const App = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 };
