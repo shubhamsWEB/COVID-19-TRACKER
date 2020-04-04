@@ -1,28 +1,21 @@
 import React from "react";
 import Header from "./header";
-import StateList from "./StateList";
-import NewsList from "./NewsList";
 import Footer from "./footer";
+import Home from "./home";
+import Symptoms from "./Symptoms";
+import Map from "./Map";
+import QnA from "./QnA";
+import { BrowserRouter, Route } from "react-router-dom";
 const App = () => {
   return (
     <React.Fragment>
-      <Header />
-      <div className="ui container">
-        <div className="ui stackable two column grid container">
-          <div className="column">
-            <StateList />
-          </div>
-          <div className="column">
-            <div className="ui one huge statistics">
-              <div className="statistic">
-                <div className="value">NEWS</div>
-                <div className="label">BULLETIN</div>
-              </div>
-            </div>
-            <NewsList />
-          </div>
-        </div>
-      </div>
+      <BrowserRouter>
+        <Header />
+        <Route path="/" exact component={Home} />
+        <Route path="/MapStats" exact component={Map} />
+        <Route path="/Symptoms" exact component={Symptoms} />
+        <Route path="/QnA" exact component={QnA} />
+      </BrowserRouter>
       <Footer />
     </React.Fragment>
   );

@@ -1,6 +1,6 @@
 {
   "name": "covid19",
-  "homepage": "http://COVID-19.shubhamsweb.in",
+  "homepage": "http://Covid19.shubhamsweb.in",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,13 +8,16 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
+    "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.28",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-google-charts": "^3.0.15",
     "react-moment": "^0.9.7",
     "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"

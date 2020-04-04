@@ -3,26 +3,49 @@ import React from "react";
 class Footer extends React.Component {
   render() {
     return (
-      <div className="ui center aligned segment">
-        <div className="ui labeled button" tabIndex="0">
-          <div className="ui basic black button">
-            <i className="fork large icon"></i><a style={{color: 'black'}} href="https://github.com/shubhamsWEB/COVID-19-TRACKER"><strong>FORK</strong></a>
+      <React.Fragment>
+        <div class="card text-center">
+          <div class="card-body">
+            <h6 class="card-title text-uppercase">"This too shall pass,Keep Clam and Stay Safe"</h6>
+            <a
+              href="https://github.com/shubhamsWEB/COVID-19-TRACKER"
+              class="m-1 btn btn-outline-dark"
+            >
+              <i class="database icon"></i><span className="h6">DATA SOURCE</span>
+            </a>
+            <a
+              href="https://newsapi.org/"
+              class="m-1 btn btn-outline-dark"
+            >
+              <i class="newspaper icon"></i><span className="h6">NEWS SOURCE</span>
+            </a><br/>
+            <a
+              href="http://shubhamsweb.in"
+              class="m-1 btn text-center"
+            >
+              <i class="globe olive circular large icon"></i>
+            </a>
+            <a
+              href="https://twitter.com/hashtag/covid19"
+              class="m-1 btn text-center"
+            >
+              <i class="twitter circular teal large icon"></i>
+            </a>
+            <a
+              href="https://github.com/shubhamsWEB/COVID-19-TRACKER"
+              class="btn text-center"
+            >
+              <i class="github circular large icon"></i>
+            </a>
+            <a
+              href="https://t.me/MyGovCoronaNewsDesk"
+              class="btn text-center"
+            >
+              <i class="telegram blue circular large icon"></i>
+            </a>
           </div>
-          <a className="ui basic left pointing black label"><i class="github large icon"></i></a>
         </div>
-        <div className="ui labeled button" tabIndex="0">
-          <div className="ui basic blue button">
-            <a style={{color: '#398CCB'}} href="https://telegra.ph/Covid-19-Sources-03-19"><strong>DATA SOURCE</strong></a>
-          </div>
-          <a className="ui basic left pointing blue label"><i class="database large icon"></i></a>
-        </div><br/><br />
-        <div className="ui labeled button" tabIndex="0">
-          <div className="ui basic teal button">
-            <a style={{color: 'teal'}} href="http://shubhamsweb.in"><strong>SHUBHAM AGRAWAL</strong></a>
-          </div>
-          <a className="ui basic left pointing teal label"><i class="globe large icon"></i></a>
-        </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
