@@ -5,14 +5,12 @@ import { getStateWise } from "../actions/index";
 class Map extends React.Component {
   constructor(props) {
     super(props);
-    this.state = [];
-    this.DataObj = {};
-    this.array = [['States','Tota Cases','Deaths']];
+    this.array = [['States','Total Cases','Deaths']];
   }
   componentDidMount() {
     this.props.getStateWise();
   }
-  renderData() {
+  renderData = () => {
     if (this.props.States.statewise) {
       return this.props.States.statewise.map(State => {
         if (State.state !== "Total") {
@@ -29,11 +27,10 @@ class Map extends React.Component {
         return <div>Loading..</div>
     }
       this.renderData();
-      console.log(this.array);
       return (
         <React.Fragment>
-          <div className="container">
-      <p className="h1 text-center">Total {this.array.length -2} States Affected</p>
+          <div>
+            <p className="display-4 font-weight-normal text-center mt-2 mb-3 text-uppercase">States Affected</p>
             <Chart
               width={"100%"}
               height={"100%"}

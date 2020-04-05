@@ -32,14 +32,13 @@ class NewsList extends React.Component {
                   </a>
                 </p>
                 <p className="h6">{N.description}</p>
-                <p class="card-text float-left">
-                  <small class="text-muted">
+                <p className="card-text float-left">
+                  <small className="text-muted">
                     By-<span className="font-weight-bold">{N.source.name}</span>
                   </small>
                 </p>
-                <p class="card-text float-right">
-                  <small class="text-muted">
-                    {" "}
+                <p className="card-text float-right">
+                  <small className="text-muted">
                     <Moment fromNow>{N.publishedAt}</Moment>
                   </small>
                 </p>
