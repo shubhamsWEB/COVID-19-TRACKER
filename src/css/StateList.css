@@ -10,8 +10,14 @@
 .color-green {
     color: #16AB39 !important;
 }
+.mobile-view {
+    display: none;
+}
 @media only screen and (max-width: 600px) {
     .h6 {
       font-size: .8rem !important;
+    }
+    .mobile-view {
+        display: inline !important;
     }
   }

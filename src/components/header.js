@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
-
+import "../css/StateList.css";
 class Header extends React.Component {
   renderTime() {
     if (Object.values(this.props.States).length > 0) {
@@ -27,6 +27,7 @@ class Header extends React.Component {
     return (
       <React.Fragment>
         <nav className="navbar text-center navbar-expand-lg navbar-light bg-light">
+        <a style={{ fontFamily: "Ubuntu" }} className="navbar-brand mobile-view text-uppercase" href="#">COVID-19 Tracker India</a>
           <button
             className="navbar-toggler"
             type="button"
@@ -61,16 +62,21 @@ class Header extends React.Component {
                   <h6>Q&A</h6>
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/Covid19/Contacts" className="nav-link">
+                  <h6>HELPLINE</h6>
+                </Link>
+              </li>
             </ul>
             <div>Last Updated  {this.renderTime()}</div>
           </div>
         </nav>
         <div className="jumbotron text-center p-4 mb-0 jumbotron-fluid">
           <div className="container">
-            <h1 className="h5">
-              “We make a living by what we get, But we make a life by what we
-              give.”
-            </h1>
+            <p className="h6">
+              <em>“We make a living by what we get, But we make a life by what we
+              give.”</em>
+            </p>
             <a  rel="noopener noreferrer"
               href="https://www.pmindia.gov.in/en/?query#" target="_blank"
               className="m-1 btn btn-outline-success"

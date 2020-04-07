@@ -30,7 +30,7 @@ class Map extends React.Component {
       return (
         <React.Fragment>
           <div>
-            <p className="display-4 font-weight-normal text-center mt-2 mb-3 text-uppercase">States Affected</p>
+            <p style={{fontFamily: 'Ubuntu'}} className="h1 font-weight-normal text-center mt-2 mb-3 text-uppercase">States & UT's Affected</p>
             <Chart
               width={"100%"}
               height={"100%"}

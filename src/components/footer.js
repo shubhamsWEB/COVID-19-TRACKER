@@ -6,9 +6,9 @@ class Footer extends React.Component {
       <React.Fragment>
         <div className="card text-center">
           <div className="card-body">
-            <h6 className="card-title text-uppercase">"This too shall pass,Keep Clam and Stay Safe"</h6>
+            <p className="h6 card-title text-uppercase"><em>"This too shall pass,Keep Clam and Stay Safe"</em></p>
             <a
-              href="https://github.com/shubhamsWEB/COVID-19-TRACKER"
+              href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSc_2y5N0I67wDU38DjDh35IZSIS30rQf7_NYZhtYYGU1jJYT6_kDx4YpF-qw0LSlGsBYP8pqM_a1Pd/pubhtml"
               className="m-1 btn btn-outline-dark"
             >
               <i className="database icon"></i><span className="h6">DATA SOURCE</span>

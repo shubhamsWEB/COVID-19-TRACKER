@@ -1,6 +1,7 @@
 import covid19 from "../api/covid19";
 import news from "../api/news";
-import {STATE_WISE,DISTRICT_WISE,LIVE_NEWS} from "./types";
+import contacts from "../api/contacts";
+import {STATE_WISE,DISTRICT_WISE,LIVE_NEWS,FETCH_CONTACTS} from "./types";
 
 export const getNews = () => async dispatch => {
   const response = await news.get();
@@ -18,4 +19,10 @@ export const getDistrictWise = () => async dispatch => {
   const response = await covid19.get("/state_district_wise.json");
 
   dispatch({ type: DISTRICT_WISE, payload: response.data });
+};
+
+export const getContacts = () => async dispatch => {
+  const response = await contacts.get();
+
+  dispatch({ type: FETCH_CONTACTS, payload: response.data});
 };

@@ -2,14 +2,19 @@ import React from "react";
 import { connect } from "react-redux";
 import { getStateWise, getDistrictWise } from "../actions";
 import "../css/StateList.css";
+import Map from "./Map";
 class StateList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.DailyData = [];
+  }
   componentDidMount() {
     this.props.getStateWise();
     this.props.getDistrictWise();
   }
 
   renderComfirmed = (State) => {
-    if (State.deltaconfirmed !== '0') {
+    if (State.deltaconfirmed !== "0") {
       return (
         <span className="text-danger">
           <small>
@@ -21,7 +26,7 @@ class StateList extends React.Component {
   };
 
   renderActive = (State) => {
-    if (State.deltaconfirmed !== '0') {
+    if (State.deltaconfirmed !== "0") {
       return (
         <span className="text-danger">
           <small>
@@ -33,7 +38,7 @@ class StateList extends React.Component {
   };
 
   renderRecovered = (State) => {
-    if (State.deltarecovered !== '0') {
+    if (State.deltarecovered !== "0") {
       return (
         <span className="text-success">
           <small>
@@ -45,9 +50,9 @@ class StateList extends React.Component {
   };
 
   renderDeaths = (State) => {
-    if (State.deltadeaths !== '0') {
+    if (State.deltadeaths !== "0") {
       return (
-        <span className="text-secondary">
+        <span className="text-dark">
           <small>
             <strong>+{State.deltadeaths}</strong>
           </small>
@@ -55,7 +60,17 @@ class StateList extends React.Component {
       );
     }
   };
-
+  renderDistrictDelta = (District) => {
+    if (District[1].delta.confirmed !== 0) {
+      return (
+        <span className="text-danger">
+          <small>
+            <strong> +{District[1].delta.confirmed}</strong>
+          </small>
+        </span>
+      );
+    }
+  };
   renderDistrict = (State) => {
     if (this.props.DistrictWise[State]) {
       return Object.entries(this.props.DistrictWise[State].districtData).map(
@@ -66,7 +81,10 @@ class StateList extends React.Component {
                 <td className="color-gray">
                   <p className="h6">{District[0]}</p>
                 </td>
-                <td className="color-gray h6">{District[1].confirmed}</td>
+                <td className="color-gray h6">
+                  {District[1].confirmed}
+                  {this.renderDistrictDelta(District)}
+                </td>
               </tr>
             </React.Fragment>
           );
@@ -179,7 +197,7 @@ class StateList extends React.Component {
         if (T.state === "Total") {
           return (
             <div className="row" key={T.state}>
-              <div className="col text-center shadow-sm border-bottom border-danger">
+              <div className="col text-center border-bottom border-danger">
                 <p
                   className="h6"
                   style={{ background: "#FF6B89", borderRadius: "5px" }}
@@ -187,13 +205,16 @@ class StateList extends React.Component {
                   CONFIRMED
                 </p>
                 <p className="text-danger">
-                  <span className="font-weight-bold">[+{T.deltaconfirmed}]
+                  <span className="font-weight-bold">
+                    [+{T.deltaconfirmed}]
                   </span>
                 </p>
-                <h3 className="text-danger">{T.confirmed}</h3>
+                <h3 style={{ fontFamily: "Ubuntu" }} className="text-danger">
+                  {T.confirmed}
+                </h3>
                 <i className="medkit red big icon mb-2"></i>
               </div>
-              <div className="col text-center shadow-sm border-bottom border-primary">
+              <div className="col text-center border-bottom border-primary">
                 <p
                   className="h6"
                   style={{ background: "#8EC5FF", borderRadius: "5px" }}
@@ -201,12 +222,16 @@ class StateList extends React.Component {
                   ACTIVE
                 </p>
                 <p className="text-danger font-weight-bolder">
-                <span className="font-weight-bold">[+{T.deltaconfirmed}]</span>
+                  <span className="font-weight-bold">
+                    [+{T.deltaconfirmed}]
+                  </span>
                 </p>
-                <h3 className="text-primary">{T.active}</h3>
+                <h3 style={{ fontFamily: "Ubuntu" }} className="text-primary">
+                  {T.active}
+                </h3>
                 <i className="hospital blue outline big icon mb-2"></i>
               </div>
-              <div className="col text-center shadow-sm border-bottom border-success">
+              <div className="col text-center border-bottom border-success">
                 <p
                   className="h6"
                   style={{ background: "#96D4A3", borderRadius: "5px" }}
@@ -214,12 +239,16 @@ class StateList extends React.Component {
                   RECOVERED
                 </p>
                 <p className="text-success font-weight-bolder">
-                <span className="font-weight-bold">[+{T.deltarecovered}]</span>
+                  <span className="font-weight-bold">
+                    [+{T.deltarecovered}]
+                  </span>
                 </p>
-                <h3 className="text-success">{T.recovered}</h3>
+                <h3 style={{ fontFamily: "Ubuntu" }} className="text-success">
+                  {T.recovered}
+                </h3>
                 <i className="heartbeat green big icon mb-2"></i>
               </div>
-              <div className="col text-center shadow-sm border-bottom border-secondary">
+              <div className="col text-center border-bottom border-secondary">
                 <p
                   className="h6"
                   style={{ background: "#B1B6BA", borderRadius: "5px" }}
@@ -227,15 +256,43 @@ class StateList extends React.Component {
                   DECEASED
                 </p>
                 <p className="text-secondary font-weight-bolder">
-                <span className="font-weight-bold">[+{T.deltadeaths}]</span>
+                  <span className="font-weight-bold">[+{T.deltadeaths}]</span>
                 </p>
-                <h3 className="text-secondary">{T.deaths}</h3>
+                <h3 style={{ fontFamily: "Ubuntu" }} className="text-secondary">
+                  {T.deaths}
+                </h3>
                 <i className="heart grey outline big icon mb-2"></i>
               </div>
             </div>
           );
         }
       });
+    }
+  }
+  renderDailyCase(Type) {
+    if (this.props.States.cases_time_series) {
+      this.DailyData = this.props.States.cases_time_series;
+      if (Type === "C") {
+        return (
+          <h3 style={{ fontFamily: "Ubuntu" }} className="text-danger">
+            {this.DailyData[this.DailyData.length - 1].dailyconfirmed}
+          </h3>
+        );
+      }
+      if (Type === "R") {
+        return (
+          <h3 style={{ fontFamily: "Ubuntu" }} className="text-success">
+            {this.DailyData[this.DailyData.length - 1].dailyrecovered}
+          </h3>
+        );
+      }
+      if (Type === "D") {
+        return (
+          <h3 style={{ fontFamily: "Ubuntu" }} className="text-secondary">
+            {this.DailyData[this.DailyData.length - 1].dailydeceased}
+          </h3>
+        );
+      }
     }
   }
   render() {
@@ -253,7 +310,7 @@ class StateList extends React.Component {
         {this.renderTotal()}
         <table className="table table-hover table-sm table-light table-bordered mt-2">
           <thead className="thead-light">
-            <tr className="text-center">
+            <tr className="text-center mb-2">
               <th className="h6">STATES</th>
               <th className="text-danger h6">CONF</th>
               <th className="text-primary h6">ACTV</th>
@@ -261,8 +318,40 @@ class StateList extends React.Component {
               <th className="text-secondary h6">DECD</th>
             </tr>
           </thead>
-          <tbody>{this.renderState()}</tbody>
+          <tbody><tr><td></td></tr>{this.renderState()}</tbody>
         </table>
+        <div className="mt-3 mb-3">
+          <p
+            style={{ fontFamily: "Ubuntu" }}
+            className="text-center h1 mt-4 mb-3 text-uppercase"
+          >
+            PREVIOUS DAY CASES
+          </p>
+          <div className="row shadow">
+            <div
+              style={{ background: "#FFE0E6" }}
+              className="p-3 col text-center"
+            >
+              <p className="h6 text-danger">CONFIRMED</p>
+              {this.renderDailyCase("C")}
+            </div>
+            <div
+              style={{ background: "#E4F4E8" }}
+              className="p-3 col text-center"
+            >
+              <p className="h6 text-success">RECOVERED</p>
+              {this.renderDailyCase("R")}
+            </div>
+            <div
+              style={{ background: "#F6F6F7" }}
+              className="p-3 col text-center"
+            >
+              <p className="h6 text-secondary">DECEASED</p>
+              {this.renderDailyCase("D")}
+            </div>
+          </div>
+        </div>
+        <Map />
       </React.Fragment>
     );
   }
