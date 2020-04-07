@@ -52,6 +52,14 @@ class Graphs extends React.Component {
       this.renderPieData();
       this.renderDailyData();
     }
+    if (!this.props.States.statewise) {
+      return (<div className="d-flex justify-content-center">
+          <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="container">
         <div className="row">

@@ -298,7 +298,7 @@ class StateList extends React.Component {
   render() {
     if (!this.props.States || !this.props.DistrictWise) {
       return (
-        <div className="text-center">
+        <div className="d-flex justify-content-center">
           <div className="spinner-border" role="status">
             <span className="sr-only">Loading...</span>
           </div>
@@ -318,7 +318,12 @@ class StateList extends React.Component {
               <th className="text-secondary h6">DECD</th>
             </tr>
           </thead>
-          <tbody><tr><td></td></tr>{this.renderState()}</tbody>
+          <tbody>
+            <tr>
+              <td></td>
+            </tr>
+            {this.renderState()}
+          </tbody>
         </table>
         <div className="mt-3 mb-3">
           <p
