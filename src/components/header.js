@@ -48,6 +48,11 @@ class Header extends React.Component {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link to="/Covid19/Global" className="nav-link">
+                  <h6>WORLD STATS</h6>
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/Covid19/Stats" className="nav-link">
                   <h6>STATISTICS</h6>
                 </Link>
@@ -60,6 +65,11 @@ class Header extends React.Component {
               <li className="nav-item">
                 <Link to="/Covid19/QnA" className="nav-link">
                   <h6>Q&A</h6>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/Covid19/SafetyMeasures" className="nav-link">
+                  <h6>SELF CARE</h6>
                 </Link>
               </li>
               <li className="nav-item">

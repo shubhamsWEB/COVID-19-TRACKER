@@ -50,7 +50,17 @@ class NewsList extends React.Component {
     }
   };
   render() {
-    return <>{this.renderNews()}</>;
+    if(!this.props.News.articles) {
+      return (<div className="d-flex justify-content-center">
+          <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+      );
+    }
+    return (
+      <React.Fragment>{this.renderNews()}</React.Fragment>
+      );
   }
 }
 const mapStateToProps = state => {

@@ -14,6 +14,7 @@
     "moment-timezone": "^0.5.28",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-globe": "^4.0.0",
     "react-google-charts": "^3.0.15",
     "react-moment": "^0.9.7",
     "react-redux": "^7.2.0",
@@ -42,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "three": "^0.115.0"
   }
 }

@@ -6,7 +6,7 @@ class Graphs extends React.Component {
   constructor(props) {
     super(props);
     this.dailydata = [
-      ["Cases","Recovered","Confirmed", "Deceased"],
+      [],
     ];
     this.piedata = [];
   }
@@ -32,6 +32,10 @@ class Graphs extends React.Component {
             ]);
           }
           }
+          if(this.dailydata.length ===16) {
+            this.dailydata.push(["Cases","Recovered","Confirmed", "Deceased"]);
+
+          }
         });
     }
   };
@@ -51,6 +55,8 @@ class Graphs extends React.Component {
     if (this.props.States.statewise) {
       this.renderPieData();
       this.renderDailyData();
+      this.dailydata.reverse().pop();
+      console.log(this.dailydata);
     }
     if (!this.props.States.statewise) {
       return (<div className="d-flex justify-content-center">
@@ -61,9 +67,9 @@ class Graphs extends React.Component {
       );
     }
     return (
-      <div className="container">
+      <div className="container mb-3 mt-3">
         <div className="row">
-          <div className="col-md-6 col-sm-12 container p-2">
+          <div className="col-md-7 col-sm-12 container mb-3">
             <h3 style={{fontFamily: 'Ubuntu'}} className="text-center mb-2 mt-2">Daily Cases Report</h3>
             <Chart
               width={"100%"}
@@ -73,13 +79,13 @@ class Graphs extends React.Component {
               data={this.dailydata}
               options={{
                 title: "Cases Recorded in previous 15 days",
-                vAxis: { title: "Cases" },
+                vAxis: { title: "Cases per Day" },
                 hAxis: { title: "Date" },
                
               }}
             />
           </div>
-          <div className="col-md-6 col-sm-12 container p-2">
+          <div className="col-md-5 col-sm-12 container">
             <h3 style={{fontFamily: 'Ubuntu'}} className="text-center mb-2 mt-2">Affected States & UT's ({this.piedata.length-1})</h3>
             <Chart
               width={"100%"}

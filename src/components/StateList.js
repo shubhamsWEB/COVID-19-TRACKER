@@ -18,7 +18,7 @@ class StateList extends React.Component {
       return (
         <span className="text-danger">
           <small>
-            <strong>+{State.deltaconfirmed}</strong>
+            <strong><i className="arrow up small icon"></i>{State.deltaconfirmed}</strong>
           </small>
         </span>
       );
@@ -30,7 +30,7 @@ class StateList extends React.Component {
       return (
         <span className="text-danger">
           <small>
-            <strong>+{State.deltaconfirmed}</strong>
+            <strong><i className="arrow up small icon"></i>{State.deltaconfirmed}</strong>
           </small>
         </span>
       );
@@ -42,7 +42,7 @@ class StateList extends React.Component {
       return (
         <span className="text-success">
           <small>
-            <strong>+{State.deltarecovered}</strong>
+            <strong><i className="arrow up small icon"></i>{State.deltarecovered}</strong>
           </small>
         </span>
       );
@@ -54,7 +54,7 @@ class StateList extends React.Component {
       return (
         <span className="text-dark">
           <small>
-            <strong>+{State.deltadeaths}</strong>
+            <strong><i className="arrow up small icon"></i>{State.deltadeaths}</strong>
           </small>
         </span>
       );
@@ -65,7 +65,7 @@ class StateList extends React.Component {
       return (
         <span className="text-danger">
           <small>
-            <strong> +{District[1].delta.confirmed}</strong>
+            <strong><i className="arrow up small icon"></i>{District[1].delta.confirmed}</strong>
           </small>
         </span>
       );
@@ -81,9 +81,8 @@ class StateList extends React.Component {
                 <td className="color-gray">
                   <p className="h6">{District[0]}</p>
                 </td>
-                <td className="color-gray h6">
-                  {District[1].confirmed}
-                  {this.renderDistrictDelta(District)}
+                <td className="color-gray">
+                  <p className="h6">{District[1].confirmed} {this.renderDistrictDelta(District)}</p>
                 </td>
               </tr>
             </React.Fragment>
@@ -106,9 +105,9 @@ class StateList extends React.Component {
     if (this.props.States.statewise) {
       return this.props.States.statewise.map((State, key) => {
         if (State.state !== "Total" && State.confirmed !== "0") {
-          var tar = `#s${key}`;
-          var id = `s${key}`;
-          var iconid = `i${key}`;
+          var tar = `#covid19${key}`;
+          var id = `covid19${key}`;
+          var iconid = `corona${key}`;
           return (
             <React.Fragment key={key}>
               <tr className="shadow-sm">
@@ -149,8 +148,8 @@ class StateList extends React.Component {
                     <table className="table table-sm table-bordered">
                       <thead className="thead-light">
                         <tr>
-                          <th>DISTRICTS</th>
-                          <th>CONFIRMED</th>
+                          <th className="h6">DISTRICTS</th>
+                          <th className="h6">CONFIRMED</th>
                         </tr>
                       </thead>
                       <tbody>{this.renderDistrict(State.state)}</tbody>
@@ -205,7 +204,7 @@ class StateList extends React.Component {
                   CONFIRMED
                 </p>
                 <p className="text-danger">
-                  <span className="font-weight-bold">
+                  <span style={{color: '#FF6B89'}} className="font-weight-bold">
                     [+{T.deltaconfirmed}]
                   </span>
                 </p>
@@ -222,7 +221,7 @@ class StateList extends React.Component {
                   ACTIVE
                 </p>
                 <p className="text-danger font-weight-bolder">
-                  <span className="font-weight-bold">
+                  <span style={{color: '#8EC5FF'}} className="font-weight-bold">
                     [+{T.deltaconfirmed}]
                   </span>
                 </p>
@@ -239,7 +238,7 @@ class StateList extends React.Component {
                   RECOVERED
                 </p>
                 <p className="text-success font-weight-bolder">
-                  <span className="font-weight-bold">
+                  <span style={{color: '#96D4A3'}} className="font-weight-bold">
                     [+{T.deltarecovered}]
                   </span>
                 </p>
@@ -256,7 +255,7 @@ class StateList extends React.Component {
                   DECEASED
                 </p>
                 <p className="text-secondary font-weight-bolder">
-                  <span className="font-weight-bold">[+{T.deltadeaths}]</span>
+                  <span style={{color: '#B1B6BA'}} className="font-weight-bold">[+{T.deltadeaths}]</span>
                 </p>
                 <h3 style={{ fontFamily: "Ubuntu" }} className="text-secondary">
                   {T.deaths}
@@ -308,7 +307,7 @@ class StateList extends React.Component {
     return (
       <React.Fragment>
         {this.renderTotal()}
-        <table className="table table-hover table-sm table-light table-bordered mt-2">
+        <table className="table table-hover table-striped table-sm table-light table-bordered mt-2">
           <thead className="thead-light">
             <tr className="text-center mb-2">
               <th className="h6">STATES</th>
