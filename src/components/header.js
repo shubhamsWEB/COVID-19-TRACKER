@@ -13,7 +13,6 @@ class Header extends React.Component {
           var year = time.lastupdatedtime.toString().slice(6,10);
           var time = time.lastupdatedtime.toString().split(" ")[1];
           var newDate = year + "/" + month + "/" + day + " " + time;
-          console.log(newDate);
         return (
           <span key="1" className="navbar-text">
             <p className="text-success h6"><Moment fromNow>{newDate}</Moment></p>
@@ -26,7 +25,7 @@ class Header extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <nav className="navbar text-center navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar sticky-top text-center navbar-expand-lg navbar-light bg-light">
         <a style={{ fontFamily: "Ubuntu" }} className="navbar-brand mobile-view text-uppercase" href="#">COVID-19 Tracker India</a>
           <button
             className="navbar-toggler"
@@ -81,21 +80,6 @@ class Header extends React.Component {
             <div>Last Updated  {this.renderTime()}</div>
           </div>
         </nav>
-        <div className="jumbotron text-center p-4 mb-0 jumbotron-fluid">
-          <div className="container">
-            <p className="h6">
-              <em>“We make a living by what we get, But we make a life by what we
-              give.”</em>
-            </p>
-            <a  rel="noopener noreferrer"
-              href="https://www.pmindia.gov.in/en/?query#" target="_blank"
-              className="m-1 btn btn-outline-success"
-            >
-              <i className="certificate icon"></i>
-              <span className="h6">PM CARES FUND</span>
-            </a>
-          </div>
-        </div>
       </React.Fragment>
     );
   }

@@ -39,9 +39,6 @@ class SafetyMeasures extends React.Component {
                 least 30 minutes as advised by Ministry of AYUSH (#YOGAatHome
                 #StayHome #StaySafe)
               </mark>
-            </li><br />
-            <li className="lead">
-              <mark>Pain or pressure in chest.</mark>
             </li>
           </ul>
         </div>

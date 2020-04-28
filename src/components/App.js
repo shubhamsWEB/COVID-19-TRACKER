@@ -8,6 +8,7 @@ import QnA from "./QnA";
 import Contacts from "./Contacts";
 import SafetyM from "./SafetyMeasures";
 import Globe from "./Globe";
+import Resources from "./Resources";
 import { HashRouter, Route } from "react-router-dom";
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/Covid19/Contacts" exact component={Contacts} />
           <Route path="/Covid19/SafetyMeasures" exact component={SafetyM} />
           <Route path="/Covid19/Global" exact component={Globe} />
+          <Route path="/Covid19/Resources" exact component={Resources} />
       </HashRouter>
       <Footer />
     </React.Fragment>

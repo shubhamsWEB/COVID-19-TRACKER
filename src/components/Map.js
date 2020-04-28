@@ -45,7 +45,7 @@ class Map extends React.Component {
                 datalessRegionColor: "#f8bbd0",
                 defaultColor: "#f5f5f5"
               }}
-              mapsApiKey="AIzaSyCMR0QJHjwcJbWBRtHc_qUKvdULXs8AfFU"
+              mapsApiKey="AIzaSyBjRfUZqlczT19eub8hpC8og55j-CDGS8s"
             />
             </div>
         </React.Fragment>

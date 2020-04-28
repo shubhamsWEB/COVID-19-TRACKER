@@ -1,5 +1,8 @@
 import React from "react";
-import ReactGlobe, { defaultDotMarkerOptions } from "react-globe";
+import ReactGlobe, {
+  defaultDotMarkerOptions,
+  defaultFocusOptions,
+} from "react-globe";
 import "../css/Globe.css";
 import { fetchWorldData, getStateWise } from "../actions";
 import { connect } from "react-redux";
@@ -38,19 +41,16 @@ class Globe extends React.Component {
         const Confirmed = parseInt(Country.totalConfirmed);
 
         if (Confirmed <= parseInt(2000)) {
-          Country.color = "green";
-        } else if (
-          Confirmed > parseInt(2000) &&
-          Confirmed <= parseInt(10000)
-        ) {
-          Country.color = "#FFA07A";
+          Country.color = "#00FFFF";
+        } else if (Confirmed > parseInt(2000) && Confirmed <= parseInt(10000)) {
+          Country.color = "#FFCC00";
         } else if (
           Confirmed > parseInt(10000) &&
           Confirmed <= parseInt(50000)
         ) {
-          Country.color = "#B22222";
+          Country.color = "#CA0B00";
         } else {
-          Country.color = "#FF0000";
+          Country.color = "#800000";
         }
       });
     }
@@ -84,10 +84,10 @@ class Globe extends React.Component {
             style={{
               position: "absolute",
               color: "#fff",
-              background: "rgba(0,0,0,.5)",
+              background: "rgba(0,0,0,.7)",
               borderRadius: "5px",
             }}
-            className="text-center p-2 mt-2"
+            className="text-center c-data p-2 mt-3 ml-3"
           >
             <p className="h3">{this.state.Country}</p>
             <p className="h5" style={{ color: "#DC3545" }}>
@@ -116,7 +116,6 @@ class Globe extends React.Component {
               cloudsOpacity: 1,
               enableClouds: true,
             }}
-            
             markerOptions={{
               activeScale: 1.6,
               enableGlow: false,

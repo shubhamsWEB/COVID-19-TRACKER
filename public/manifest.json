@@ -3,18 +3,18 @@
   "name": "Coronavirus COVID-19 India Tracker",
   "icons": [
     {
-      "src": "virus.ico",
+      "src": "favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/ico"
+      "type": "image/png"
     },
     {
-      "src": "virus.ico",
-      "type": "image/ico",
+      "src": "favicon.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "virus.ico",
-      "type": "image/ico",
+      "src": "favicon.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],

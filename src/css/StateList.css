@@ -1,23 +1,71 @@
+
 .color-gray {
-    color: gray !important;
+  color: gray !important;
 }
 .color-red {
-    color: #D01919 !important;
+  color: #d01919 !important;
 }
 .color-blue {
-    color: #2185D0 !important;
+  color: #2185d0 !important;
 }
 .color-green {
-    color: #16AB39 !important;
+  color: #16ab39 !important;
 }
 .mobile-view {
-    display: none;
+  display: none;
 }
-@media only screen and (max-width: 600px) {
-    .h6 {
-      font-size: .8rem !important;
-    }
-    .mobile-view {
-        display: inline !important;
-    }
+.c-data {
+  top: 35%;
+  left: 20%;
+  transform: translate(-50%-20%);
+  transform: scale(1.4);
+}
+@media only screen and (max-width: 500px) and (min-width: 378px) {
+  .h6 {
+    font-size: 0.74rem !important;
   }
+  .mobile-view {
+    display: inline !important;
+  }
+  .c-data {
+    top: 30%;
+    left: 0;
+    transform: scale(1);
+  }
+  .total-text {
+    font-size: 1.48rem !important;
+  }
+  .delta-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 377px) {
+  .h6 {
+    font-size: 0.6rem !important;
+  }
+  .mobile-view {
+    display: inline !important;
+  }
+  .c-data {
+    top: 30%;
+    left: 0;
+    transform: scale(1);
+  }
+  .total-text {
+    font-size: 1.3rem !important;
+  }
+  .delta-text {
+    font-size: 0.8rem;
+  }
+}
+.shadow-hover {
+  transition: .2s ease-in-out;
+}
+.shadow-hover:hover {
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
