@@ -26,7 +26,7 @@ class Header extends React.Component {
     return (
       <React.Fragment>
         <nav className="navbar sticky-top text-center navbar-expand-lg navbar-light bg-light">
-        <a style={{ fontFamily: "Ubuntu" }} className="navbar-brand mobile-view text-uppercase" href="#">COVID-19 Tracker India</a>
+        <a className="navbar-brand mobile-view text-uppercase" href="#">COVID-19 Tracker</a>
           <button
             className="navbar-toggler"
             type="button"

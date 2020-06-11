@@ -135,11 +135,10 @@ class Graphs extends React.Component {
       );
     }
     return (
-      <div className="p-3 mb-3 mt-3">
+      <div className="p-md-3 mb-3 mt-3">
         <div className="row">
           <div className="col-md-7 col-sm-12 mb-3">
             <h3
-              style={{ fontFamily: "Ubuntu" }}
               className="text-center mb-2 mt-2"
             >
               Daily Cases Report

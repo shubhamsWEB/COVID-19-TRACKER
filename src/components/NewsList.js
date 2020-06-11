@@ -12,7 +12,7 @@ class NewsList extends React.Component {
       return this.props.News.articles.map(N => {
         return (
           <React.Fragment key={N.title}>
-            <div className="row container shadow-sm m-1 mb-2">
+            <div className="row container shadow-sm mb-3">
               <div className="col-md-4 text-center">
                 <img
                   src={N.urlToImage}

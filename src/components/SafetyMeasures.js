@@ -4,7 +4,7 @@ class SafetyMeasures extends React.Component {
   render() {
     return (
       <div className="container p-5">
-        <p style={{fontFamily: 'Ubuntu'}} className="h1 mb-4 text-center">
+        <p className="h1 mb-4 text-center">
           Ayurveda’s immunity boosting measures for self care during COVID 19
           crisis
         </p>

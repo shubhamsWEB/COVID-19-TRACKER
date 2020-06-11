@@ -3,8 +3,8 @@ import React from "react";
 const QnA = () => {
   return (
       <React.Fragment>
-    <div className="container p-5">
-    <p className="display-4 mb-4 text-center">Q&A on coronaviruses (COVID-19)</p>
+    <div className="container p-md-5">
+    <p className="h1 mb-4 text-center">Q&A on coronaviruses (COVID-19)</p>
         <p className="h5">WHO is continuously monitoring and responding to this outbreak. This Q&A will be updated as more is known about COVID-19, how it spreads and how it is affecting people worldwide. For more information, check back regularly on WHO’s coronavirus pages. <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">Page</a></p>
       <div class="accordion" id="accordionExample">
         <div

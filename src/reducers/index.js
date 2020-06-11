@@ -4,10 +4,12 @@ import states from "./state";
 import news from "./news";
 import contacts from "./Contacts";
 import worldData from "./World";
+import zonedata from "./Zones";
 export default combineReducers({
   DistrictData: district,
   StateData: states,
   News: news,
   Contacts: contacts,
-  worldData: worldData
+  worldData: worldData,
+  ZoneDetails: zonedata
 });

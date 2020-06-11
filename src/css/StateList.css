@@ -1,4 +1,8 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
 .color-gray {
   color: gray !important;
 }
@@ -24,6 +28,21 @@
   .h6 {
     font-size: 0.74rem !important;
   }
+  .col-md-6 {
+    padding-left: 1px !important;
+    padding-right:1px !important;
+  }
+  .data {
+    font-size: .90rem ;
+  }
+  .row {
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+  }
+   #ct {
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+  }
   .mobile-view {
     display: inline !important;
   }
@@ -33,10 +52,14 @@
     transform: scale(1);
   }
   .total-text {
-    font-size: 1.48rem !important;
+    font-size: 1.4rem !important;
   }
   .delta-text {
     font-size: 0.8rem;
+  }
+  .col {
+    padding-left: 1px !important;
+    padding-right: 1px !important;
   }
 }
 
@@ -44,6 +67,26 @@
   .h6 {
     font-size: 0.6rem !important;
   }
+  
+  .row {
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+  }
+  .col {
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+  }
+   #ct {
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+  }
+  .data {
+    font-size: .65rem;
+  }
+  .col-md-6 {
+    padding-left: 1px !important;
+    padding-right:1px !important;
+  }
   .mobile-view {
     display: inline !important;
   }
@@ -53,7 +96,7 @@
     transform: scale(1);
   }
   .total-text {
-    font-size: 1.3rem !important;
+    font-size: 1.1rem !important;
   }
   .delta-text {
     font-size: 0.8rem;
@@ -68,4 +111,26 @@
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
     0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.data {
+  font-family: 'Poppins', sans-serif;
+ }
+ .Red {
+   background: #EFD4D8;
+   color: #DC3545;
+ }
+.Orange {
+  background: rgb(241, 225, 181);
+  color: #FD8824;
+}
+.Green {
+  background: #D2E5DA;
+  color: #28A745;
+}
+.table-c {
+  background: rgb(217, 217, 217,.4);
+}
+.down {
+  background: #575555 !important;
+  color: ivory !important;
 }
