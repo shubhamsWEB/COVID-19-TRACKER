@@ -9,7 +9,7 @@ import Contacts from "./Contacts";
 import SafetyM from "./SafetyMeasures";
 import Globe from "./Globe";
 import Resources from "./Resources";
-import { HashRouter, Route } from "react-router-dom";
+import { HashRouter,Route } from "react-router-dom";
 const App = () => {
   return (
     <React.Fragment>
